@@ -582,7 +582,21 @@ local function spawnDropItem()
 end
 
 for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
- print(i,Function)
+    local NewFunc = Instance.new("TextButton")
+    NewFunc.Name = Function["Name"]
+    NewFunc.Parent = Options
+    NewFunc.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    NewFunc.BackgroundTransparency = 0.500
+    NewFunc.Position = UDim2.new(0.027608633, 0, 0.0087274313, 0)
+    NewFunc.Size = UDim2.new(0, 220, 0, 25)
+    NewFunc.Font = Enum.Font.Fantasy
+    NewFunc.Text = Function["Text"]
+    NewFunc.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NewFunc.TextScaled = true
+    NewFunc.TextSize = 24.000
+    NewFunc.TextWrapped = true
+    
+    NewFunc.MouseButton1Click:Connect(Function["Func"])
 end
 
 HelmetS.MouseButton1Click:Connect(function()
