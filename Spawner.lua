@@ -583,7 +583,7 @@ end
 
 for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
     local NewFunc = Instance.new("TextButton")
-    NewFunc.Name = Function["Name"]
+    NewFunc.Name = Function["Name"] 
     NewFunc.Parent = Options
     NewFunc.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     NewFunc.BackgroundTransparency = 0.500
