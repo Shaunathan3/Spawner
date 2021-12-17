@@ -603,6 +603,9 @@ for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
 	NewFunc.TextWrapped = true
 
 	NewFunc.MouseButton1Click:Connect(Function["Func"])
+	
+	local absoluteContentSize = Options.UIListLayout.AbsoluteContentSize
+	Options.CanvasSize = UDim2.new(0, 0, 0, absoluteContentSize.Y) 	
 end
 
 HelmetS.MouseButton1Click:Connect(function()
