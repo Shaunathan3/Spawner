@@ -364,7 +364,7 @@ module.UnequipFromEquipped(slot)
 
 local Player = game.Players.LocalPlayer
 local InvManager = require(game.Players.LocalPlayer.PlayerScripts.InvManager)
-local CallingScript = game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript
+local CallingScript = game:GetService("Players").LocalPlayer.Character.Client
 local UserInputService = game:GetService("UserInputService")
 
 local Info = {Item = ""}
@@ -471,7 +471,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToEquipped, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "1", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToEquipped, game:GetService("Players").LocalPlayer.Character.Client, "1", Item)
 
 			end
 		end
@@ -483,7 +483,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToEquipped, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "2", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToEquipped, game:GetService("Players").LocalPlayer.Character.Client, "2", Item)
 
 			end
 		end
@@ -495,7 +495,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Cape", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Cape", Item)
 
 			end
 		end
@@ -507,7 +507,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Helm", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Helm", Item)
 
 			end
 		end
@@ -519,7 +519,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Accessory", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Accessory", Item)
 
 			end
 		end
@@ -531,8 +531,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Shirt", Item)
-
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Shirt", Item)
 			end
 		end
 	elseif Type == "Pants" then
@@ -543,7 +542,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Pants", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Pants", Item)
 
 			end
 		end
@@ -555,7 +554,7 @@ local function AddItem(Type)
 			if not Slot:FindFirstChild("Interact") and not Added then
 				Added = true
 				Item.Parent = Slot
-				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, "Shield", Item)
+				syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToBody, game:GetService("Players").LocalPlayer.Character.Client, "Shield", Item)
 
 			end
 		end
@@ -569,14 +568,14 @@ local function spawnDropItem()
 	local Inv = Frame:WaitForChild("Inv")
 	local Found = false
 
-	syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToInvLOL, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, Info.Item)
+	syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToInvLOL, game:GetService("Players").LocalPlayer.Character.Client, Info.Item)
 
 	for i = 1, 18 do
 		local Slot = Inv[i]
 
 		if Slot:FindFirstChild(Info.Item.Name) and not Found then
 			Found = true
-			syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).DropInvItem, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, Slot, Slot[Info.Item.Name])
+			syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).DropInvItem, game:GetService("Players").LocalPlayer.Character.Client, Slot, Slot[Info.Item.Name])
 		end
 	end
 end
@@ -650,14 +649,14 @@ end)
 
 RefillS.MouseButton1Click:Connect(function()
 	Sound:Play()
-	syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).RefillAllAmmo, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript)
+	syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).RefillAllAmmo, game:GetService("Players").LocalPlayer.Character.Client)
 end)
 
 AddS.MouseButton1Click:Connect(function()
 	Sound:Play()
 
 	if Info.Item ~= "" then
-		syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToInvLOL, game:GetService("Players").LocalPlayer.PlayerGui.Inventory.Frame.Inv["1"].Interact.Equip1.LocalScript, Info.Item)
+		syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).AddToInvLOL, game:GetService("Players").LocalPlayer.Character.Client, Info.Item)
 	end
 end)
 
