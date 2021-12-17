@@ -1,7 +1,7 @@
 local Spawner = Instance.new("ScreenGui")
 local UI = Instance.new("Frame")
 local InvButtons = Instance.new("Folder")
-local Options = Instance.new("Frame")
+local Options = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local HelmetS = Instance.new("TextButton")
 local ClothingS = Instance.new("TextButton")
@@ -45,11 +45,18 @@ InvButtons.Parent = UI
 
 Options.Name = "Options"
 Options.Parent = InvButtons
+Options.Active = true
 Options.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Options.BackgroundTransparency = 1.000
+Options.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Options.BorderSizePixel = 0
 Options.Position = UDim2.new(0.603640616, 0, 0.247999966, 0)
 Options.Size = UDim2.new(0, 236, 0, 372)
 Options.ZIndex = 2
+Options.BottomImage = "http://www.roblox.com/asset/?id=7738427589"
+Options.MidImage = "http://www.roblox.com/asset/?id=7738427589"
+Options.ScrollBarThickness = 10
+Options.TopImage = "http://www.roblox.com/asset/?id=7738427589"
 
 UIListLayout.Parent = Options
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
