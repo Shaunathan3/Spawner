@@ -602,7 +602,9 @@ for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
 	NewFunc.TextSize = 24.000
 	NewFunc.TextWrapped = true
 
-	NewFunc.MouseButton1Click:Connect(Function["Func"])
+	NewFunc.MouseButton1Click:Connect(function()
+		Function["Func"]()				
+	end)
 	
 	local absoluteContentSize = Options.UIListLayout.AbsoluteContentSize
 	Options.CanvasSize = UDim2.new(0, 0, 0, absoluteContentSize.Y) 	
@@ -620,7 +622,8 @@ ClothingS.MouseButton1Click:Connect(function()
 	Sound:Play()
 
 	if Info.Item ~= "" then
-		AddItem("Clothing")
+		AddItem("Shirt")
+		AddItem("Pants")
 	end
 end)
 
@@ -636,8 +639,7 @@ ShieldS.MouseButton1Click:Connect(function()
 	Sound:Play()
 
 	if Info.Item ~= "" then
-		AddItem("Shirt")
-		AddItem("Pants")
+		AddItem("Shield")
 	end
 end)
 
