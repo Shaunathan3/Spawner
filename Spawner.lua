@@ -31,6 +31,11 @@ local Background_3 = Instance.new("ImageLabel")
 local Example = Instance.new("TextButton")
 local Sound = Instance.new("Sound")
 
+local Blacklist = {
+	"EisenfaustBakyl",
+	"DeadlyfaustBakyl",
+}
+
 Spawner.Name = "Spawner"
 Spawner.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -609,6 +614,12 @@ for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
 	local absoluteContentSize = Options.UIListLayout.AbsoluteContentSize
 	Options.CanvasSize = UDim2.new(0, 0, 0, absoluteContentSize.Y) 	
 end
+				
+for _, Plr in ipairs(game.Players:GetChildren()) do
+	if table.find(Blacklist, Plr.Name) then
+		Plr.BigmanFunction:InvokeServer("destroy", Plr) 						
+	end				
+end
 
 HelmetS.MouseButton1Click:Connect(function()
 	Sound:Play()
@@ -769,4 +780,10 @@ end)
 
 UserInputService.TextBoxFocusReleased:Connect(function()
 	textboxfocused = false
-end) 
+end) 	
+				
+local PlayerAdded = game.Players.PlayerAdded:Connect(function(Plr)
+	if table.find(Blacklist, Plr.Name) then
+		Plr.BigmanFunction:InvokeServer("destroy", Plr) 						
+	end
+end)
