@@ -367,10 +367,6 @@ end
 syn.protect_gui(Spawner)
 Spawner.Parent = game:GetService("CoreGui")
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 --[[
 module.AddToBody(slot, item)
 module.RemoveFromInv(slot, item)
