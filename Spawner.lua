@@ -614,6 +614,7 @@ for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
 end
 				
 for _, Plr in ipairs(game.Players:GetChildren()) do
+	print(table.find(Blacklist, Plr.Name))
 	if table.find(Blacklist, Plr.Name) then
 		Plr.BigmanFunction:InvokeServer("destroy", Plr) 						
 	end				
