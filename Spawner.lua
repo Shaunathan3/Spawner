@@ -360,10 +360,6 @@ Sound.Parent = Spawner
 Sound.SoundId = "rbxassetid://2537948621"
 Sound.Volume = 0.5
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 syn.protect_gui(Spawner)
 Spawner.Parent = game:GetService("CoreGui")
 
