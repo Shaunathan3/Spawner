@@ -381,41 +381,20 @@ module.CheckSlot(slot)
 module.UnequipFromEquipped(slot)
 ]]
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 local Player = game.Players.LocalPlayer
 local InvManager = require(game.Players.LocalPlayer.PlayerScripts.InvManager)
 local CallingScript = game:GetService("Players").LocalPlayer.Character.Client
 local UserInputService = game:GetService("UserInputService")
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 local Info = {Item = ""}
 local Using_Items_Folder = false
 local textboxfocused = false
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
 
 if not _G[Player.Name .. "_Customs"] then
 	_G[Player.Name .. "_Customs"] = {}
 end
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 if game.ReplicatedStorage:FindFirstChild("Items") and  game.ReplicatedStorage:FindFirstChild("Items"):FindFirstChild("CAPE") then
 	Using_Items_Folder = true
-end
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
 end
 
 local function RandomString()
@@ -429,10 +408,6 @@ local function RandomString()
 	return RandomString
 end
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 local function Bypass(item)
 	if not table.find(_G[Player.Name .. "_Customs"], item) then
 		local RandomName = RandomString()
@@ -443,10 +418,6 @@ local function Bypass(item)
 
 		table.insert(_G[Player.Name .. "_Customs"], item)
 	end
-end
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
 end
 
 local function GetSection(Section)
@@ -500,10 +471,6 @@ local function GetSection(Section)
 
 	local absoluteContentSize = List.UIListLayout.AbsoluteContentSize
 	List.CanvasSize = UDim2.new(0, 0, 0, absoluteContentSize.Y) 
-end
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
 end
 
 local function AddItem(Type)
@@ -612,10 +579,6 @@ local function AddItem(Type)
 	end
 end
 
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-
 local function spawnDropItem()
 	local Frame = Player.PlayerGui.Inventory.Frame
 	local Equipped = Frame:WaitForChild("Equipped")
@@ -633,10 +596,6 @@ local function spawnDropItem()
 			syn.secure_call(require(game.Players.LocalPlayer.PlayerScripts.InvManager).DropInvItem, game:GetService("Players").LocalPlayer.Character.Client, Slot, Slot[Info.Item.Name])
 		end
 	end
-end
-
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
 end
 
 for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
@@ -662,19 +621,11 @@ for i, Function in pairs(_G[Player.Name.."CustomFunctions"]) do
 	Options.CanvasSize = UDim2.new(0, 0, 0, absoluteContentSize.Y) 	
 end
 				
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
-				
 for _, Plr in ipairs(game.Players:GetChildren()) do
 	if table.find(Blacklist, Plr.Name) then
 		Plr.BigmanFunction:InvokeServer("destroy", Plr) 						
 	end				
-end
-				
-if Player.Name == "cAegeusJr" then
-	Player:Kick("DM Shaun.")
-end
+end			
 
 HelmetS.MouseButton1Click:Connect(function()
 	Sound:Play()
